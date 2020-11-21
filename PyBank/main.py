@@ -50,14 +50,20 @@ print(f"Average  Change: ${avg}")
 print(f"Greatest Increase in Profits: {greatest_increase[0]}, (${greatest_increase[1]})")
 print(f"Greatest Decrease in Profits: {greatest_decrease[0]}, (${greatest_decrease[1]})")
 
-text_path=os.path.join("..", "Analysis", "Analysis.txt")
+output_path=os.path.join("Analysis", "Analysis.txt")
 
-with open(text_path, 'w') as file:
-    file.write(f'Financial Analysis')
-    file.write(f'----------------------------')
-    file.write(f"Total Months: {num_months}")
-    file.write(f"Total: ${profit_losses}")
-    file.write(f"Average  Change: ${avg}")
-    file.write(f"Greatest Increase in Profits: {greatest_increase[0]}, (${greatest_increase[1]})")
-    file.write(f"Greatest Decrease in Profits: {greatest_decrease[0]}, (${greatest_decrease[1]})")
-    file.close
+with open(output_path, 'w') as writer:
+    
+    writer.writelines(f'Financial Analysis')
+    writer.writelines("\n")
+    writer.writelines(f'----------------------------')
+    writer.writelines("\n")
+    writer.writelines(f"Total Months: {num_months}")
+    writer.writelines("\n")
+    writer.writelines(f"Total: ${profit_losses}")
+    writer.writelines("\n")
+    writer.writelines(f"Average  Change: ${avg}")
+    writer.writelines("\n")
+    writer.writelines(f"Greatest Increase in Profits: {greatest_increase[0]}, (${greatest_increase[1]})")
+    writer.writelines("\n")
+    writer.writelines(f"Greatest Decrease in Profits: {greatest_decrease[0]}, (${greatest_decrease[1]})")
